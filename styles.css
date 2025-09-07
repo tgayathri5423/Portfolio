@@ -191,13 +191,18 @@ h2 {
     transition: 0.3s
 }
 
+
 .card img {
     width: 100%;
-    height: 160px;
-    object-fit: cover;
+    height: auto;
+    /* Let the image keep its natural aspect ratio */
+    object-fit: contain;
+    /* Show the full image */
+    display: block;
     border-radius: 12px;
-    margin-bottom: 1rem
+    /* optional: keeps rounded corners */
 }
+
 
 .card:hover {
     transform: translateY(-8px);
@@ -270,5 +275,25 @@ h2 {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+
+    page-3d {
+        position: fixed;
+        inset: 0;
+        z-index: -1
+    }
+
+    bg3d {
+        width: 100%;
+        height: 100%;
+        display: block
+    }
+
+    main,
+    header,
+    footer,
+    section {
+        position: relative;
+        z-index: 1
     }
 }
